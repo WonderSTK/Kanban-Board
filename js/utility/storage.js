@@ -1,4 +1,6 @@
+// Simple wrapper for localStorage with JSON parsing
 export const storage = {
+    // Get and parse stored data
     get(key) {
         try {
             return JSON.parse(localStorage.getItem(key));
@@ -7,6 +9,7 @@ export const storage = {
         }
     },
 
+    // Stringify and store data
     set(key, value) {
         localStorage.setItem(key, JSON.stringify(value));
     }
